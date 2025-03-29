@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+     Sabor da pizza:
+    <input type="text" id="input_sabor">
+    <br><br>
+
+    Preço pizza:
+    <input type="number" id="input_preco">
+    <br><br>
+
+    Quantas pessoas irão comer?
+    <input type="number" id="input_amigos">
+    <br><br>
+
+    <button onclick="valorPorAmigo()">Ver valor por amigo</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    var referencia = div_mensagem.innerHTML;
+
+    function valorPorAmigo() {
+        var sabor = input_sabor.value;
+        var preco = Number(input_preco.value);
+        var amigos = Number(input_amigos.value);
+
+        var caixinha = preco * 0.1;
+
+        var valorTotal = preco + caixinha;
+
+        var precoPorAmigo = valorTotal / amigos;
+
+        referencia = 
+        `Cada amigo vai colaborar com R$${precoPorAmigo} para a pizza de ${sabor} <br> 
+        Valor total da pizza: R$${valorTotal}`
+        ;
+        
+        div_mensagem.innerHTML = referencia;
+    }
+</script>
