@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferências</title>
+</head>
+<body>
+    <h2>Critérios de Preferência de Augusto Bivio</h2> <br>
+
+    Nome da empresa:
+    <input type="text" id="input_nome"> <br><br>
+
+    Bolsa da empresa:
+    <input type="text" id="input_bolsa"> <br><br>
+
+    VR da empresa:
+    <input type="text" id="input_vr"> <br><br>
+
+    Tempo de deslocamento para a SPTech:
+    <input type="text" id="input_deslocamento"> <br><br>
+
+    <button onclick="solicitar()">É preferida?</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function solicitar(){
+        var nome = input_nome.value;
+        var bolsa = Number(input_bolsa.value);
+        var vr = Number(input_vr.value);
+        var deslocamento = Number(input_deslocamento.value);
+
+        if (bolsa >= 1800 || vr >= 20 || deslocamento <= 30){
+            div_mensagem.innerHTML = `A empresa ${nome} é uma de suas preferências`;
+        } else {
+            div_mensagem.innerHTML = `A empresa ${nome} está fora da sua lista`;
+        }
+    }
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Social</title>
+</head>
+<body>
+    <h2>Classe Social em Tuvalu: Em Qual Você se Encaixa?</h2>
+
+    Insira a renda familiar mensal:
+    <input type="number" id="input_mensal"> <br><br>
+
+    <button onclick="analisar()">Analisar Renda</button> <br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var rendaMensal = Number(input_mensal.value);
+
+        if(rendaMensal <= 250){
+            div_mensagem.innerHTML = `Classe E`;
+        } else if (rendaMensal > 250){
+            if (rendaMensal <= 900) {
+                div_mensagem.innerHTML = `Classe D`;
+            } else if (rendaMensal > 900) {
+                if (rendaMensal <= 2500) {
+                    div_mensagem.innerHTML = `Classe C`;
+                } else if (rendaMensal > 2500) {
+                    if (rendaMensal <= 9500) {
+                        div_mensagem.innerHTML = `Classe B`;
+                    } else {
+                        div_mensagem.innerHTML = `Classe A`;
+                    }
+                }
+            }
+        }
+
+        // correção do professor
+        // if (rendaMensal <= 250){
+        //     div_mensagem.innerHTML = `Classe E`;
+        // } else if (rendaMensal <= 900) {
+        //     div_mensagem.innerHTML = `Classe D`;
+        // } else if (rendaMensal <= 2500) {
+        //     div_mensagem.innerHTML = `Classe C`;
+        // } else if (rendaMensal <= 9500) {
+        //     div_mensagem.innerHTML = `Classe B`;
+        // } else {
+        //     div_mensagem.innerHTML = `Classe A`;
+        // }
+    }
+</script>

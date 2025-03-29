@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h3>Tabuada</h3>
+
+    Digite um número para ver sua tabuada:
+    <input type="number" id="input_numero">
+    <br><br>
+
+    <button onclick="verTabuada()">Ver Tabuada</button>
+
+    <div id="div_mensagem"></div> 
+</body>
+</html>
+
+<script>
+    var referencia = div_mensagem.innerHTML;
+
+    function verTabuada() {
+    var numeroTabuada = Number(input_numero.value);
+    
+    referencia = `
+    ${numeroTabuada} x 1 = ${numeroTabuada * 1} <br>
+    ${numeroTabuada} x 2 = ${numeroTabuada * 2}  <br>
+    ${numeroTabuada} x 3 = ${numeroTabuada * 3}  <br>
+    ${numeroTabuada} x 4 = ${numeroTabuada * 4}  <br>
+    ${numeroTabuada} x 5 = ${numeroTabuada * 5}  <br>
+    ${numeroTabuada} x 6 = ${numeroTabuada * 6}  <br>
+    ${numeroTabuada} x 7 = ${numeroTabuada * 7}  <br>
+    ${numeroTabuada} x 8 = ${numeroTabuada * 8}  <br>
+    ${numeroTabuada} x 9 = ${numeroTabuada * 9}  <br>
+    `;
+    div_mensagem.innerHTML = referencia;
+    }
+        // for (let 	i = 0; 	 i <= 9; i++) {
+        //     div_mensagem.innerHTML += ` ${numeroTabuada} x ${i} = ${numeroTabuada * i} <br>`       
+        // }
+
+</script>

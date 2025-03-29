@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nota Continuada: 
+    <input id="input_continuada" type="text">
+    <br><br>
+
+    Nota Semestral:
+    <input id="input_semestral" type="text">
+    <br><br>
+
+    Nome do Aluno:
+    <input type="text" id="input_nome">
+    <br><br>
+    <button onclick="calcular()">Calcular Média</button>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var nome = input_nome.value;
+        var continuada = Number(input_continuada.value); // "10" => 10
+        var semestral = Number(input_semestral.value);
+
+        var pesoContinuada = continuada * 0.4;  // 40% da continuada
+        var pesoSemestral = semestral * 0.6;    // 60% da semestral
+        /*  var pesoContinuada = continuada * 40/100;  // outra fórmula
+            var pesoSemestral = semestral * 60/100;    // outra fórmula    */
+
+        var media = pesoContinuada + pesoSemestral;
+
+        alert("A média de " + nome + " será de " + media);
+    }
+</script>

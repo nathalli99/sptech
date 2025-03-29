@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensação Térmica</title>
+</head>
+<body>
+    <h2> Sensação Térmica: Como o Corpo Humano Percebe a Temperatura </h2>
+    
+    Insira a temperatura:
+    <input type="number" id="input_temperatura"> <br><br>
+
+    <button onclick="medir()">Ler temperatura</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function medir(){
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura <= 14) {
+            div_mensagem.innerHTML = `Para o ser humano, a temperatura ${temperatura}ºC é congelante.`;
+        } else if (temperatura > 14) {
+            if (temperatura <= 21) {
+                div_mensagem.innerHTML = `Para o ser humano, a temperatura ${temperatura}ºC é com frio.`;
+            } else if (temperatura > 21) {
+                if (temperatura <= 24){
+                    div_mensagem.innerHTML = `Para o ser humano, a temperatura ${temperatura}ºC é confortável.`;
+                } else if (temperatura > 24) {
+                    if (temperatura < 31) {
+                        div_mensagem.innerHTML = `Para o ser humano, a temperatura ${temperatura}ºC é com calor.`;
+                    } else {
+                        div_mensagem.innerHTML = `Para o ser humano, a temperatura ${temperatura}ºC é calor escaldante.`;
+                    }
+                }
+            }
+        }
+    }
+</script>
